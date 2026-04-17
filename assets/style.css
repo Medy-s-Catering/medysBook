@@ -1,0 +1,749 @@
+/* ============================================================
+   MEDY'S CATERING – GLOBAL STYLESHEET
+   Theme: Red & White | Bootstrap 5 | Responsive
+   ============================================================ */
+
+/* ---- GOOGLE FONTS ---- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap');
+
+/* ---- CSS VARIABLES ---- */
+:root {
+  --mc-red:        #c0392b;
+  --mc-red-dark:   #96281b;
+  --mc-red-light:  #e74c3c;
+  --mc-white:      #ffffff;
+  --mc-off-white:  #fdf5f5;
+  --mc-dark:       #1a1a1a;
+  --mc-gray:       #5a5a5a;
+  --mc-light-gray: #f0f0f0;
+  --mc-gold:       #ffe066;
+  --mc-radius:     12px;
+  --mc-shadow:     0 8px 32px rgba(192,57,43,0.12);
+  --mc-transition: all 0.3s ease;
+}
+
+/* ---- BASE ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--mc-dark);
+  background: var(--mc-white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+img { max-width: 100%; }
+
+a { text-decoration: none; }
+
+/* ---- NAVBAR ---- */
+.mc-navbar {
+  background: var(--mc-red-dark);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  transition: var(--mc-transition);
+}
+
+.mc-navbar .nav-link {
+  color: rgba(255,255,255,0.88) !important;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 6px;
+  transition: var(--mc-transition);
+  font-size: 0.95rem;
+}
+
+.mc-navbar .nav-link:hover,
+.mc-navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255,255,255,0.15);
+}
+
+.mc-brand-text {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.mc-logo-icon {
+  font-size: 1.6rem;
+  color: var(--mc-gold);
+}
+
+/* ---- BUTTONS ---- */
+.mc-btn-primary {
+  background: var(--mc-red);
+  color: #fff !important;
+  border: 2px solid var(--mc-red);
+  border-radius: 50px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.04em;
+  transition: var(--mc-transition);
+  padding: 0.6rem 1.6rem;
+}
+
+.mc-btn-primary:hover {
+  background: var(--mc-red-dark);
+  border-color: var(--mc-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(192,57,43,0.35);
+}
+
+.mc-btn-outline {
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 50px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.04em;
+  transition: var(--mc-transition);
+  padding: 0.6rem 1.6rem;
+}
+
+.mc-btn-outline:hover {
+  background: #fff;
+  color: var(--mc-red) !important;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.mc-btn-outline-red {
+  background: transparent;
+  color: var(--mc-red) !important;
+  border: 2px solid var(--mc-red);
+  border-radius: 50px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  transition: var(--mc-transition);
+  padding: 0.6rem 1.6rem;
+}
+
+.mc-btn-outline-red:hover {
+  background: var(--mc-red);
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* ---- HERO ---- */
+.mc-hero {
+  position: relative;
+  min-height: 90vh;
+  /* REPLACE: background-image below with actual Medy's Catering hero/banner photo */
+  background-image: url("../pictures/pic1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.mc-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(150,40,27,0.82) 0%, rgba(26,26,26,0.7) 100%);
+}
+
+.mc-hero-tagline {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mc-gold);
+  margin-bottom: 1rem;
+}
+
+.mc-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.mc-hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.8;
+  max-width: 580px;
+}
+
+.mc-accent { color: var(--mc-gold); }
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+
+/* ---- STATS ---- */
+.mc-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.mc-stat-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ---- SECTIONS ---- */
+.mc-section { background: var(--mc-white); }
+.mc-section-alt { background: var(--mc-off-white); }
+.mc-section-red { background: var(--mc-red-dark); }
+
+.mc-section-pre {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mc-red);
+  margin-bottom: 0.4rem;
+}
+
+.mc-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.mc-body-text {
+  font-size: 1rem;
+  color: var(--mc-gray);
+  line-height: 1.8;
+}
+
+/* ---- IMAGE FRAME ---- */
+.mc-img-frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.mc-img-frame img {
+  border-radius: var(--mc-radius);
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.mc-img-badge {
+  position: absolute;
+  bottom: -18px;
+  right: 20px;
+  background: var(--mc-red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: var(--mc-shadow);
+}
+
+/* ---- FEATURE CARDS ---- */
+.mc-feature-card {
+  background: var(--mc-off-white);
+  border: 1.5px solid #f0d0cc;
+  border-radius: var(--mc-radius);
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--mc-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: var(--mc-transition);
+}
+
+.mc-feature-card:hover {
+  border-color: var(--mc-red);
+  background: #fff0ee;
+  transform: translateY(-2px);
+}
+
+.mc-feature-icon {
+  font-size: 1.3rem;
+  color: var(--mc-red);
+  flex-shrink: 0;
+}
+
+/* ---- SERVICE CARDS ---- */
+.mc-service-card {
+  background: #fff;
+  border: 1.5px solid #ecdad8;
+  border-radius: var(--mc-radius);
+  padding: 2rem 1.5rem;
+  transition: var(--mc-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.mc-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--mc-red);
+  transform: scaleX(0);
+  transition: var(--mc-transition);
+  transform-origin: left;
+}
+
+.mc-service-card:hover {
+  box-shadow: var(--mc-shadow);
+  transform: translateY(-4px);
+  border-color: var(--mc-red-light);
+}
+
+.mc-service-card:hover::before { transform: scaleX(1); }
+
+.mc-service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--mc-red);
+  margin-bottom: 1rem;
+}
+
+.mc-service-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+}
+
+.mc-service-desc {
+  color: var(--mc-gray);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.mc-link {
+  color: var(--mc-red);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--mc-transition);
+  margin-top: 0.75rem;
+}
+
+.mc-link:hover { gap: 0.6rem; color: var(--mc-red-dark); }
+
+/* ---- GALLERY THUMBS ---- */
+.mc-gallery-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--mc-radius);
+  aspect-ratio: 1/1;
+}
+
+.mc-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mc-gallery-thumb:hover img { transform: scale(1.08); }
+
+.mc-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(150,40,27,0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: var(--mc-transition);
+}
+
+.mc-gallery-thumb:hover .mc-gallery-overlay { opacity: 1; }
+
+.mc-gallery-overlay span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ---- TESTIMONIALS ---- */
+.mc-testimonial-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--mc-radius);
+  padding: 2rem 1.5rem;
+  color: #fff;
+  font-style: italic;
+  font-size: 0.97rem;
+  line-height: 1.8;
+  transition: var(--mc-transition);
+  backdrop-filter: blur(4px);
+}
+
+.mc-testimonial-card:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px);
+}
+
+.mc-stars { color: var(--mc-gold); font-size: 0.9rem; }
+
+.mc-testimonial-author {
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--mc-gold);
+}
+
+/* ---- CTA ---- */
+.mc-cta {
+  background: var(--mc-off-white);
+  border-top: 4px solid var(--mc-red);
+}
+
+/* ---- FOOTER ---- */
+.mc-footer {
+  background: #111;
+  color: rgba(255,255,255,0.8);
+}
+
+.mc-footer-heading {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.mc-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mc-footer-links li {
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.mc-footer-links a {
+  color: rgba(255,255,255,0.65);
+  transition: var(--mc-transition);
+}
+
+.mc-footer-links a:hover { color: var(--mc-gold); padding-left: 4px; }
+
+.mc-footer-hr { border-color: rgba(255,255,255,0.15); }
+
+.mc-social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  transition: var(--mc-transition);
+}
+
+.mc-social-icon:hover {
+  background: var(--mc-red);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ---- PAGE HERO (inner pages) ---- */
+.mc-page-hero {
+  /* REPLACE: background-image with actual Medy's Catering event photo as page banner */
+  background: linear-gradient(135deg, var(--mc-red-dark) 0%, #3d0c07 100%);
+  padding: 5rem 0 3rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.mc-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.mc-page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  position: relative;
+}
+
+.mc-page-hero p {
+  opacity: 0.85;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---- ABOUT PAGE ---- */
+.mc-value-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mc-value-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--mc-red);
+  flex-shrink: 0;
+}
+
+/* ---- TEAM CARDS ---- */
+.mc-team-card {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: var(--mc-radius);
+  border: 1.5px solid #ecdad8;
+  background: #fff;
+  transition: var(--mc-transition);
+}
+
+.mc-team-card:hover {
+  box-shadow: var(--mc-shadow);
+  transform: translateY(-4px);
+  border-color: var(--mc-red);
+}
+
+.mc-team-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--mc-red);
+  overflow: hidden;
+  background: #f0d0cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--mc-red-dark);
+}
+
+/* ---- SERVICES PAGE ---- */
+.mc-services-detail {
+  padding: 2rem;
+  border-radius: var(--mc-radius);
+  margin-bottom: 1.5rem;
+  background: #fff;
+  border: 1.5px solid #ecdad8;
+  transition: var(--mc-transition);
+}
+
+.mc-services-detail:hover {
+  box-shadow: var(--mc-shadow);
+  border-color: var(--mc-red-light);
+}
+
+.mc-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed #e0ccc9;
+}
+
+.mc-menu-item:last-child { border-bottom: none; }
+
+/* ---- GALLERY PAGE ---- */
+.mc-gallery-full-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--mc-radius);
+  cursor: pointer;
+}
+
+.mc-gallery-full-thumb img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mc-gallery-full-thumb:hover img { transform: scale(1.07); }
+
+.mc-gallery-full-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(150,40,27,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--mc-transition);
+}
+
+.mc-gallery-full-thumb:hover .mc-gallery-full-overlay { opacity: 1; }
+
+.mc-gallery-full-overlay i { font-size: 2rem; color: #fff; }
+
+/* ---- CONTACT PAGE ---- */
+.mc-contact-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.mc-contact-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--mc-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ---- FORM STYLES ---- */
+.mc-form-control {
+  border: 1.5px solid #e0ccc9;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--mc-transition);
+  width: 100%;
+}
+
+.mc-form-control:focus {
+  outline: none;
+  border-color: var(--mc-red);
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+}
+
+.mc-form-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+  color: var(--mc-dark);
+}
+
+/* ---- BOOKING PAGE ---- */
+.mc-booking-step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--mc-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.mc-booking-form-card {
+  background: #fff;
+  border: 1.5px solid #ecdad8;
+  border-radius: var(--mc-radius);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(192,57,43,0.07);
+}
+
+/* ---- BREADCRUMB ---- */
+.mc-breadcrumb {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.mc-breadcrumb a { color: rgba(255,255,255,0.65); }
+.mc-breadcrumb a:hover { color: var(--mc-gold); }
+
+/* ---- SCROLL TO TOP ---- */
+.mc-scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--mc-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--mc-transition);
+  box-shadow: 0 4px 16px rgba(192,57,43,0.35);
+  z-index: 999;
+  border: none;
+}
+
+.mc-scroll-top.visible { opacity: 1; pointer-events: all; }
+.mc-scroll-top:hover { transform: translateY(-3px); background: var(--mc-red-dark); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 991.98px) {
+  .mc-hero { background-attachment: scroll; }
+  .mc-img-badge { right: 10px; font-size: 0.8rem; }
+}
+
+@media (max-width: 767.98px) {
+  .mc-booking-form-card { padding: 1.5rem 1rem; }
+  .mc-stat-num { font-size: 1.8rem; }
+}
+
+@media (max-width: 575.98px) {
+  .mc-hero { min-height: 80vh; }
+  .mc-hero-title { font-size: 2rem; }
+}

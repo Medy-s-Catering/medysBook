@@ -128,7 +128,6 @@ a { text-decoration: none; }
 .mc-hero {
   position: relative;
   min-height: 90vh;
-  /* REPLACE: background-image below with actual Medy's Catering hero/banner photo */
   background-image: url("../pictures/pic1.jpg");
   background-size: cover;
   background-position: center;

@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const filter = btn.dataset.filter;
         galleryItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
+          if (filter == 'all' || item.dataset.category == filter) {
             item.style.display = '';
           } else {
             item.style.display = 'none';

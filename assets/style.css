@@ -1,12 +1,5 @@
-/* ============================================================
-   MEDY'S CATERING – GLOBAL STYLESHEET
-   Theme: Red & White | Bootstrap 5 | Responsive
-   ============================================================ */
-
-/* ---- GOOGLE FONTS ---- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap');
 
-/* ---- CSS VARIABLES ---- */
 :root {
   --mc-red:        #c0392b;
   --mc-red-dark:   #96281b;
@@ -22,7 +15,6 @@
   --mc-transition: all 0.3s ease;
 }
 
-/* ---- BASE ---- */
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
@@ -41,7 +33,6 @@ img { max-width: 100%; }
 
 a { text-decoration: none; }
 
-/* ---- NAVBAR ---- */
 .mc-navbar {
   background: var(--mc-red-dark);
   box-shadow: 0 2px 20px rgba(0,0,0,0.25);
@@ -79,7 +70,6 @@ a { text-decoration: none; }
   color: var(--mc-gold);
 }
 
-/* ---- BUTTONS ---- */
 .mc-btn-primary {
   background: var(--mc-red);
   color: #fff !important;
@@ -135,7 +125,6 @@ a { text-decoration: none; }
   transform: translateY(-2px);
 }
 
-/* ---- HERO ---- */
 .mc-hero {
   position: relative;
   min-height: 90vh;
@@ -179,7 +168,6 @@ a { text-decoration: none; }
 
 .mc-accent { color: var(--mc-gold); }
 
-/* ---- ANIMATIONS ---- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -197,7 +185,6 @@ a { text-decoration: none; }
 
 .animate-fade-in { animation: fadeIn 0.5s ease forwards; }
 
-/* ---- STATS ---- */
 .mc-stat-num {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
@@ -212,7 +199,6 @@ a { text-decoration: none; }
   opacity: 0.85;
 }
 
-/* ---- SECTIONS ---- */
 .mc-section { background: var(--mc-white); }
 .mc-section-alt { background: var(--mc-off-white); }
 .mc-section-red { background: var(--mc-red-dark); }
@@ -240,7 +226,6 @@ a { text-decoration: none; }
   line-height: 1.8;
 }
 
-/* ---- IMAGE FRAME ---- */
 .mc-img-frame {
   position: relative;
   display: inline-block;
@@ -267,7 +252,6 @@ a { text-decoration: none; }
   box-shadow: var(--mc-shadow);
 }
 
-/* ---- FEATURE CARDS ---- */
 .mc-feature-card {
   background: var(--mc-off-white);
   border: 1.5px solid #f0d0cc;
@@ -294,7 +278,6 @@ a { text-decoration: none; }
   flex-shrink: 0;
 }
 
-/* ---- SERVICE CARDS ---- */
 .mc-service-card {
   background: #fff;
   border: 1.5px solid #ecdad8;
@@ -362,7 +345,6 @@ a { text-decoration: none; }
 
 .mc-link:hover { gap: 0.6rem; color: var(--mc-red-dark); }
 
-/* ---- GALLERY THUMBS ---- */
 .mc-gallery-thumb {
   position: relative;
   overflow: hidden;
@@ -399,7 +381,6 @@ a { text-decoration: none; }
   font-family: 'Playfair Display', serif;
 }
 
-/* ---- TESTIMONIALS ---- */
 .mc-testimonial-card {
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
@@ -428,13 +409,11 @@ a { text-decoration: none; }
   color: var(--mc-gold);
 }
 
-/* ---- CTA ---- */
 .mc-cta {
   background: var(--mc-off-white);
   border-top: 4px solid var(--mc-red);
 }
 
-/* ---- FOOTER ---- */
 .mc-footer {
   background: #111;
   color: rgba(255,255,255,0.8);
@@ -489,7 +468,6 @@ a { text-decoration: none; }
   transform: translateY(-3px);
 }
 
-/* ---- PAGE HERO (inner pages) ---- */
 .mc-page-hero {
   /* REPLACE: background-image with actual Medy's Catering event photo as page banner */
   background: linear-gradient(135deg, var(--mc-red-dark) 0%, #3d0c07 100%);
@@ -520,7 +498,6 @@ a { text-decoration: none; }
   position: relative;
 }
 
-/* ---- ABOUT PAGE ---- */
 .mc-value-item {
   display: flex;
   gap: 1rem;
@@ -540,7 +517,6 @@ a { text-decoration: none; }
   flex-shrink: 0;
 }
 
-/* ---- TEAM CARDS ---- */
 .mc-team-card {
   text-align: center;
   padding: 2rem 1rem;
@@ -571,7 +547,6 @@ a { text-decoration: none; }
   color: var(--mc-red-dark);
 }
 
-/* ---- SERVICES PAGE ---- */
 .mc-services-detail {
   padding: 2rem;
   border-radius: var(--mc-radius);
@@ -596,7 +571,6 @@ a { text-decoration: none; }
 
 .mc-menu-item:last-child { border-bottom: none; }
 
-/* ---- GALLERY PAGE ---- */
 .mc-gallery-full-thumb {
   position: relative;
   overflow: hidden;
@@ -628,7 +602,6 @@ a { text-decoration: none; }
 
 .mc-gallery-full-overlay i { font-size: 2rem; color: #fff; }
 
-/* ---- CONTACT PAGE ---- */
 .mc-contact-info-box {
   display: flex;
   align-items: flex-start;
@@ -649,7 +622,6 @@ a { text-decoration: none; }
   flex-shrink: 0;
 }
 
-/* ---- FORM STYLES ---- */
 .mc-form-control {
   border: 1.5px solid #e0ccc9;
   border-radius: 10px;
@@ -673,7 +645,6 @@ a { text-decoration: none; }
   color: var(--mc-dark);
 }
 
-/* ---- BOOKING PAGE ---- */
 .mc-booking-step {
   width: 40px;
   height: 40px;
@@ -697,7 +668,6 @@ a { text-decoration: none; }
   box-shadow: 0 4px 20px rgba(192,57,43,0.07);
 }
 
-/* ---- BREADCRUMB ---- */
 .mc-breadcrumb {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.65);
@@ -706,7 +676,6 @@ a { text-decoration: none; }
 .mc-breadcrumb a { color: rgba(255,255,255,0.65); }
 .mc-breadcrumb a:hover { color: var(--mc-gold); }
 
-/* ---- SCROLL TO TOP ---- */
 .mc-scroll-top {
   position: fixed;
   bottom: 2rem;
@@ -732,7 +701,6 @@ a { text-decoration: none; }
 .mc-scroll-top.visible { opacity: 1; pointer-events: all; }
 .mc-scroll-top:hover { transform: translateY(-3px); background: var(--mc-red-dark); }
 
-/* ---- RESPONSIVE ---- */
 @media (max-width: 991.98px) {
   .mc-hero { background-attachment: scroll; }
   .mc-img-badge { right: 10px; font-size: 0.8rem; }

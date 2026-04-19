@@ -91,8 +91,8 @@ a { text-decoration: none; }
 
 .mc-btn-outline {
   background: transparent;
-  color: #ffffff !important;
-  border: 2px solid rgba(255,255,255,0.8);
+  color: #c0392b !important;
+  border: 2px solid #c0392b;
   border-radius: 50px;
   font-weight: 700;
   font-family: 'Lato', sans-serif;
@@ -102,9 +102,10 @@ a { text-decoration: none; }
 }
 
 .mc-btn-outline:hover {
-  background: #fff;
-  color: var(--mc-red) !important;
-  border-color: #fff;
+  background: #c0392b;
+  color: #fff !important;
+  /* color: var(--mc-red) !important; */
+  border-color: #c0392b;
   transform: translateY(-2px);
 }
 

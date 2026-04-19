@@ -104,7 +104,6 @@ a { text-decoration: none; }
 .mc-btn-outline:hover {
   background: #c0392b;
   color: #fff !important;
-  /* color: var(--mc-red) !important; */
   border-color: #c0392b;
   transform: translateY(-2px);
 }

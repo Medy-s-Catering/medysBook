@@ -207,15 +207,25 @@
               </div>
 
               <!-- TERMS -->
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" id="termsCheck" required />
-                <label class="form-check-label mc-body-text" for="termsCheck">
-                  I agree to the <a href="#" style="color:var(--mc-red)">terms and conditions</a> of Medy's Catering. I
-                  understand this is a booking request and is subject to confirmation by the team.
-                </label>
+              <div class="mc-terms-box mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="termsCheck" />
+                  <label class="form-check-label mc-body-text" for="termsCheck">
+                    I have read and agree to the
+                    <a href="#" class="mc-terms-link" data-bs-toggle="modal" data-bs-target="#termsModal">
+                      Terms and Conditions
+                    </a>
+                    of Medy's Catering. I understand this is a booking request and is subject to confirmation by the
+                    team.
+                  </label>
+                </div>
+                <div id="termsError" class="mc-field-error d-none">
+                  <i class="bi bi-exclamation-circle-fill me-1"></i>You must agree to the Terms and Conditions before
+                  submitting.
+                </div>
               </div>
 
-              <button type="submit" class="btn mc-btn-primary btn-lg w-100 py-3">
+              <button type="button" class="btn mc-btn-primary btn-lg w-100 py-3" onclick="openConfirmModal()">
                 <i class="bi bi-calendar2-check-fill me-2"></i>Submit Booking Request
               </button>
 
@@ -335,8 +345,424 @@
     </div>
   </footer>
 
+  <!-- ================================================================
+       TERMS AND CONDITIONS MODAL
+       ================================================================ -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="border-radius:16px;overflow:hidden;">
+        <div class="modal-header" style="background:var(--mc-red-dark);border:none;">
+          <h5 class="modal-title text-white fw-bold" id="termsModalLabel" style="font-family:'Playfair Display',serif;">
+            <i class="bi bi-file-text-fill me-2" style="color:var(--mc-gold)"></i>
+            Terms and Conditions
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4"
+          style="font-family:'Lato',sans-serif;font-size:0.95rem;color:#374151;line-height:1.8;">
+
+          <p style="font-size:0.85rem;color:#6B7280;margin-bottom:1.5rem;">
+            Last updated: 2025 &nbsp;|&nbsp; Medy's Catering, Trapiche 2, Tanauan City, Batangas, Philippines
+          </p>
+
+          <p>Please read these Terms and Conditions carefully before submitting your booking request. By submitting the
+            booking form, you confirm that you have read, understood, and agreed to these terms.</p>
+
+          <!-- 1 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">1. Booking Request</h6>
+          <p>Submitting the online booking form does <strong>not</strong> guarantee a confirmed reservation. All booking
+            requests are subject to availability and must be confirmed by Medy's Catering staff. You will receive a
+            confirmation call or message within <strong>24 hours</strong> after submitting your request.</p>
+
+          <!-- 2 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">2. Client Responsibilities</h6>
+          <p>The client is responsible for providing accurate and complete information in the booking form, including
+            the
+            event date, venue, number of guests, and contact details. Medy's Catering shall not be held liable for any
+            issues arising from incorrect or incomplete information submitted by the client.</p>
+
+          <!-- 3 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">3. Payment and Reservation</h6>
+          <p>A reservation is only fully confirmed upon payment of the required deposit as agreed with Medy's Catering
+            staff during the confirmation process. The deposit amount and payment schedule will be communicated to the
+            client after the initial booking request is reviewed.</p>
+
+          <!-- 4 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">4. Cancellation Policy</h6>
+          <p>Clients who wish to cancel a confirmed booking must notify Medy's Catering at least <strong>7 days</strong>
+            before the event date. Cancellations made within 7 days of the event may result in partial or full
+            forfeiture
+            of the deposit, depending on the circumstances. Medy's Catering reserves the right to cancel a booking in
+            cases of unforeseen events, natural disasters, or circumstances beyond its control, with a full refund of
+            any
+            deposit paid.</p>
+
+          <!-- 5 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">5. Changes and Modifications</h6>
+          <p>Any changes to a confirmed booking — including the event date, venue, number of guests, or package — must
+            be
+            communicated to Medy's Catering as early as possible. Changes are subject to availability and may affect
+            pricing. Medy's Catering will do its best to accommodate reasonable requests but cannot guarantee that all
+            modifications will be possible.</p>
+
+          <!-- 6 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">6. Service Delivery</h6>
+          <p>Medy's Catering will provide catering and event management services as agreed in the booking confirmation.
+            The client is responsible for ensuring that the event venue is accessible to Medy's Catering staff on the
+            agreed date and time. Medy's Catering is not responsible for delays caused by inaccessible venues, incorrect
+            directions, or factors outside its control.</p>
+
+          <!-- 7 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">7. Food and Dietary Restrictions</h6>
+          <p>Clients with specific dietary requirements or food allergies must disclose this information during the
+            booking
+            process. While Medy's Catering will make reasonable efforts to accommodate dietary needs, it cannot
+            guarantee
+            a completely allergen-free environment. Clients are advised to inform their guests accordingly.</p>
+
+          <!-- 8 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">8. Privacy and Data Use</h6>
+          <p>Personal information submitted through the booking form — including your name, contact details, and event
+            information — will be collected and used solely for the purpose of processing your booking and communicating
+            with you regarding your event. Your information will not be shared with third parties without your consent,
+            except as required by law.</p>
+
+          <!-- 9 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">9. Liability</h6>
+          <p>Medy's Catering shall not be held liable for any loss, injury, or damage occurring at the event venue that
+            is beyond the scope of its catering and coordination responsibilities. The client assumes full
+            responsibility
+            for the safety and conduct of their guests during the event.</p>
+
+          <!-- 10 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">10. Governing Law</h6>
+          <p>These Terms and Conditions are governed by the laws of the Republic of the Philippines. Any disputes
+            arising
+            from the use of our services shall be subject to the jurisdiction of the appropriate courts of Batangas,
+            Philippines.</p>
+
+          <!-- 11 -->
+          <h6 style="color:var(--mc-red);font-weight:700;margin-top:1.5rem;">11. Agreement</h6>
+          <p>By submitting the booking form and checking the Terms and Conditions checkbox, you acknowledge that you
+            have
+            read, understood, and agreed to all of the above terms. If you have any questions about these terms, please
+            contact us at <strong>mdavesulabo@yahoo.com</strong> or call <strong>0999 864 8368</strong> before
+            submitting your request.</p>
+
+        </div>
+        <div class="modal-footer" style="border-top:1px solid #f0e8e6;">
+          <button type="button" class="btn mc-btn-outline-red px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn mc-btn-primary px-5" onclick="acceptTerms()">
+            <i class="bi bi-check-circle-fill me-2"></i>I Agree
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       BOOKING CONFIRMATION MODAL
+       ================================================================ -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius:16px;overflow:hidden;">
+        <div class="modal-header" style="background:var(--mc-red-dark);border:none;">
+          <h5 class="modal-title text-white fw-bold" id="confirmModalLabel"
+            style="font-family:'Playfair Display',serif;">
+            <i class="bi bi-calendar2-check-fill me-2" style="color:var(--mc-gold)"></i>
+            Confirm Your Booking
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+
+          <p class="mc-body-text mb-3">Please review your booking details before submitting. Once submitted, our team
+            will contact you within <strong>24 hours</strong> to confirm availability.</p>
+
+          <!-- Summary Table -->
+          <div class="mc-confirm-table">
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-person-fill me-2"
+                  style="color:var(--mc-red)"></i>Name</span>
+              <span class="mc-confirm-value" id="cs-name">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-envelope-fill me-2"
+                  style="color:var(--mc-red)"></i>Email</span>
+              <span class="mc-confirm-value" id="cs-email">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-telephone-fill me-2"
+                  style="color:var(--mc-red)"></i>Phone</span>
+              <span class="mc-confirm-value" id="cs-phone">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-tag-fill me-2" style="color:var(--mc-red)"></i>Event
+                Type</span>
+              <span class="mc-confirm-value" id="cs-event">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-box-seam-fill me-2"
+                  style="color:var(--mc-red)"></i>Package</span>
+              <span class="mc-confirm-value" id="cs-package">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-calendar3 me-2" style="color:var(--mc-red)"></i>Date</span>
+              <span class="mc-confirm-value" id="cs-date">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-clock-fill me-2"
+                  style="color:var(--mc-red)"></i>Time</span>
+              <span class="mc-confirm-value" id="cs-time">—</span>
+            </div>
+            <div class="mc-confirm-row">
+              <span class="mc-confirm-label"><i class="bi bi-people-fill me-2"
+                  style="color:var(--mc-red)"></i>Guests</span>
+              <span class="mc-confirm-value" id="cs-guests">—</span>
+            </div>
+            <div class="mc-confirm-row" style="border-bottom:none;">
+              <span class="mc-confirm-label"><i class="bi bi-geo-alt-fill me-2"
+                  style="color:var(--mc-red)"></i>Venue</span>
+              <span class="mc-confirm-value" id="cs-venue">—</span>
+            </div>
+          </div>
+
+          <div class="mt-3 p-3 rounded-3" style="background:#fff8f0;border:1.5px solid #fde8d8;">
+            <p class="mb-0" style="font-size:0.82rem;color:#92400E;">
+              <i class="bi bi-info-circle-fill me-1"></i>
+              This is a <strong>booking request only</strong>. Your booking is not finalized until our team contacts you
+              and confirms availability.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:1px solid #f0e8e6;gap:0.75rem;">
+          <button type="button" class="btn mc-btn-outline-red px-4" data-bs-dismiss="modal">
+            <i class="bi bi-pencil-fill me-1"></i> Edit Details
+          </button>
+          <button type="button" class="btn mc-btn-primary px-5" onclick="submitBookingForm()">
+            <i class="bi bi-send-fill me-2"></i>Yes, Submit Request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/script.js"></script>
+
+  <!-- ================================================================
+       ADDITIONAL STYLES
+       ================================================================ -->
+  <style>
+    /* Terms box */
+    .mc-terms-box {
+      background: var(--mc-off-white);
+      border: 1.5px solid #ecdad8;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .mc-terms-link {
+      color: var(--mc-red);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .mc-terms-link:hover {
+      color: var(--mc-red-dark);
+    }
+
+    /* When terms are accepted, highlight the box */
+    .mc-terms-box.terms-accepted {
+      border-color: #10b981;
+      background: #f0fdf4;
+    }
+
+    .mc-terms-box.terms-accepted .form-check-input {
+      background-color: #10b981;
+      border-color: #10b981;
+    }
+
+    /* Inline error message */
+    .mc-field-error {
+      color: var(--mc-red);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* Confirmation summary table */
+    .mc-confirm-table {
+      border: 1.5px solid #ecdad8;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .mc-confirm-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f5ebe9;
+      font-size: 0.88rem;
+    }
+
+    .mc-confirm-row:nth-child(even) {
+      background: #fdf7f6;
+    }
+
+    .mc-confirm-label {
+      color: #6B7280;
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 110px;
+    }
+
+    .mc-confirm-value {
+      color: #111827;
+      font-weight: 600;
+      text-align: right;
+      word-break: break-word;
+    }
+  </style>
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <script>
+    // ── Accept Terms from modal "I Agree" button ──────────────────────
+    function acceptTerms() {
+      document.getElementById('termsCheck').checked = true;
+      document.getElementById('termsError').classList.add('d-none');
+      document.querySelector('.mc-terms-box').classList.add('terms-accepted');
+      bootstrap.Modal.getInstance(document.getElementById('termsModal')).hide();
+    }
+
+    // ── Reflect checkbox state visually ──────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+      const chk = document.getElementById('termsCheck');
+      const box = document.querySelector('.mc-terms-box');
+      chk.addEventListener('change', function () {
+        if (chk.checked) {
+          box.classList.add('terms-accepted');
+          document.getElementById('termsError').classList.add('d-none');
+        } else {
+          box.classList.remove('terms-accepted');
+        }
+      });
+    });
+
+    // ── Format event type label from value ───────────────────────────
+    function formatEventType(val) {
+      const map = {
+        corporate: 'Corporate Event',
+        wedding: 'Wedding / Reception',
+        birthday: 'Birthday / Debut',
+        school: 'School Activity',
+        reunion: 'Family Reunion',
+        other: 'Other'
+      };
+      return map[val] || val;
+    }
+
+    // ── Format package label from value ──────────────────────────────
+    function formatPackage(val) {
+      const map = {
+        basic: 'Basic Package',
+        standard: 'Standard Package',
+        premium: 'Premium Package',
+        custom: 'Custom Package (discuss with team)'
+      };
+      return map[val] || val;
+    }
+
+    // ── Format date to readable string ───────────────────────────────
+    function formatDate(val) {
+      if (!val) return '—';
+      const d = new Date(val + 'T00:00:00');
+      return d.toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    // ── Format time to 12-hour ────────────────────────────────────────
+    function formatTime(val) {
+      if (!val) return '—';
+      const [h, m] = val.split(':').map(Number);
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      const hr = h % 12 || 12;
+      return `${hr}:${String(m).padStart(2, '0')} ${ampm}`;
+    }
+
+    // ── Validate required fields ──────────────────────────────────────
+    function validateForm() {
+      const form = document.getElementById('bookingForm');
+      const fields = form.querySelectorAll('[required]');
+      let valid = true;
+
+      fields.forEach(function (field) {
+        if (!field.value.trim()) {
+          field.classList.add('is-invalid');
+          valid = false;
+        } else {
+          field.classList.remove('is-invalid');
+        }
+      });
+
+      if (!document.getElementById('termsCheck').checked) {
+        document.getElementById('termsError').classList.remove('d-none');
+        document.querySelector('.mc-terms-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('#bookingForm [required]').forEach(function (field) {
+        field.addEventListener('input', function () {
+          if (field.value.trim()) field.classList.remove('is-invalid');
+        });
+        field.addEventListener('change', function () {
+          if (field.value.trim()) field.classList.remove('is-invalid');
+        });
+      });
+    });
+
+    function openConfirmModal() {
+      
+      if (!validateForm()) {
+  
+        const first = document.querySelector('#bookingForm .is-invalid, #termsError:not(.d-none)');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      const form = document.getElementById('bookingForm');
+      const fd = new FormData(form);
+
+      // summary
+      document.getElementById('cs-name').textContent = fd.get('client_name') || '—';
+      document.getElementById('cs-email').textContent = fd.get('email') || '—';
+      document.getElementById('cs-phone').textContent = fd.get('phone') || '—';
+      document.getElementById('cs-event').textContent = formatEventType(fd.get('event_type'));
+      document.getElementById('cs-package').textContent = formatPackage(fd.get('package'));
+      document.getElementById('cs-date').textContent = formatDate(fd.get('event_date'));
+      document.getElementById('cs-time').textContent = formatTime(fd.get('event_time'));
+      document.getElementById('cs-guests').textContent = fd.get('guest_count') + ' guests' || '—';
+      document.getElementById('cs-venue').textContent = fd.get('venue') || '—';
+
+      new bootstrap.Modal(document.getElementById('confirmModal')).show();
+    }
+
+    function submitBookingForm() {
+
+      bootstrap.Modal.getInstance(document.getElementById('confirmModal')).hide();
+
+      document.getElementById('bookingForm').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    }
+  </script>
+
 </body>
 
 </html>

@@ -241,18 +241,15 @@
         </div>
 
       </div>
-      <!-- END Gallery Grid -->
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="mc-lightbox" id="lightbox">
     <button class="mc-lightbox-close" onclick="closeLightbox()"><i class="bi bi-x-lg"></i></button>
     <img id="lightboxImg" src="" alt="" />
     <p class="mc-lightbox-caption" id="lightboxCaption"></p>
   </div>
 
-  <!-- CTA -->
   <section class="py-4 mc-section-red text-white text-center">
     <div class="container">
       <h4 class="mc-section-title text-white mb-3">Want Your Event to Look Like <span
@@ -316,7 +313,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/script.js"></script>
   <script>
-    // Lightbox functionality
+  
     function openLightbox(thumbEl) {
       const img = thumbEl.querySelector('img');
       document.getElementById('lightboxImg').src = img.src;
@@ -331,14 +328,12 @@
       document.body.style.overflow = '';
     }
 
-    // Close lightbox on backdrop click
     document.getElementById('lightbox').addEventListener('click', function (e) {
-      if (e.target === this) closeLightbox();
+      if (e.target == this) closeLightbox();
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key == 'Escape') closeLightbox();
     });
   </script>
 </body>

@@ -107,6 +107,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---- FEEDBACK FORM SUBMISSION ----
+  const feedbackForm = document.getElementById('feedbackForm');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Validate star rating
+      const starSelected = feedbackForm.querySelector('input[name="star_rating"]:checked');
+      if (!starSelected) {
+        const starLabel = document.getElementById('starLabel');
+        if (starLabel) {
+          starLabel.textContent = 'Please select a star rating.';
+          starLabel.style.color = 'var(--mc-red)';
+        }
+        return;
+      }
+
+      // ===== DATABASE NOTE =====
+      // TODO: POST feedback data to your backend endpoint.
+      // Recommended fields: client_name, email, event_type, has_booked,
+      // star_rating, comments, liked_tags, status='unread', created_at
+      // These match the staff portal's feedback module fields exactly.
+      //
+      // const formData = new FormData(feedbackForm);
+      // fetch('/api/feedback', {
+      //   method: 'POST',
+      //   body: JSON.stringify(Object.fromEntries(formData)),
+      //   headers: { 'Content-Type': 'application/json' }
+      // })
+      // .then(res => res.json())
+      // .then(data => { /* handle success */ })
+      // .catch(err => { /* handle error */ });
+      // =========================
+
+      const successAlert = document.getElementById('feedbackSuccess');
+      if (successAlert) {
+        successAlert.classList.remove('d-none');
+        feedbackForm.reset();
+        // reset tag buttons visually
+        document.querySelectorAll('.mc-tag-btn').forEach(btn => {
+          btn.style.background = 'transparent';
+          btn.style.color = 'var(--mc-red)';
+        });
+        const tagInput = document.getElementById('likedTagsValue');
+        if (tagInput) tagInput.value = '';
+        const starLabel = document.getElementById('starLabel');
+        if (starLabel) { starLabel.textContent = 'Click a star to rate'; starLabel.style.color = ''; }
+        successAlert.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
   // ---- GALLERY FILTER (Gallery Page) ----
   const filterBtns = document.querySelectorAll('.mc-filter-btn');
   const galleryItems = document.querySelectorAll('.mc-gallery-item');

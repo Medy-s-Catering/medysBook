@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery – Medy's Catering</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
   <style>
     .mc-lightbox {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 9999;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     }
-    .mc-lightbox.active { display: flex; }
+
+    .mc-lightbox.active {
+      display: flex;
+    }
+
     .mc-lightbox img {
       max-width: 90vw;
       max-height: 80vh;
       border-radius: 12px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
     }
+
     .mc-lightbox-close {
       position: absolute;
       top: 1.5rem;
@@ -37,278 +46,301 @@
       border: none;
       line-height: 1;
     }
+
     .mc-lightbox-caption {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       margin-top: 1rem;
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAVBAR --> 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top mc-navbar">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <span class="mc-logo-icon"><i class="bi bi-award-fill"></i></span>
-      <span class="mc-brand-text">Medy's<strong> Catering</strong></span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-3"><a class="btn mc-btn-outline" href="booking.html">Book Now</a></li>
-      </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top mc-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="mc-logo-icon"><i class="bi bi-award-fill"></i></span>
+        <span class="mc-brand-text">Medy's<strong> Catering</strong></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn mc-btn-outline" href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- PAGE HERO -->
-<section class="mc-page-hero">
-  <div class="container">
-    <nav aria-label="breadcrumb" class="mc-breadcrumb mb-3">
-      <a href="index.html">Home</a> / <span>Gallery</span>
-    </nav>
-    <h1 class="animate-fade-up">Event <span style="color:var(--mc-gold)">Gallery</span></h1>
-    <p class="animate-fade-up delay-1 mt-2">A showcase of our past events and culinary creations</p>
-  </div>
-</section>
-
-<!-- GALLERY FILTERS -->
-<section class="py-5 mc-section">
-  <div class="container">
-    <!-- Filter Buttons -->
-    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
-      <button class="btn mc-btn-primary mc-filter-btn active" data-filter="all">All Events</button>
-      <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="wedding">Weddings</button>
-      <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="corporate">Corporate</button>
-      <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="birthday">Birthdays</button>
-      <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="school">School Events</button>
-      <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="food">Food & Setup</button>
+  <!-- PAGE HERO -->
+  <section class="mc-page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mc-breadcrumb mb-3">
+        <a href="index.html">Home</a> / <span>Gallery</span>
+      </nav>
+      <h1 class="animate-fade-up">Event <span style="color:var(--mc-gold)">Gallery</span></h1>
+      <p class="animate-fade-up delay-1 mt-2">A showcase of our past events and culinary creations</p>
     </div>
+  </section>
 
-    <!-- Gallery Grid -->
-    <!-- ============================================================
+  <!-- GALLERY FILTERS -->
+  <section class="py-5 mc-section">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button class="btn mc-btn-primary mc-filter-btn active" data-filter="all">All Events</button>
+        <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="wedding">Weddings</button>
+        <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="corporate">Corporate</button>
+        <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="birthday">Birthdays</button>
+        <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="school">School Events</button>
+        <button class="btn mc-btn-outline-red mc-filter-btn" data-filter="food">Food & Setup</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <!-- ============================================================
          PHOTO REPLACEMENT GUIDE:
          Replace each img src below with actual Medy's Catering event photos.
          Keep the data-category attribute to maintain the filter functionality.
          Keep the data-caption attribute for the lightbox caption.
          ============================================================ -->
-    <div class="row g-3">
+      <div class="row g-3">
 
-      <!-- Wedding Photos -->
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="wedding">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering past wedding reception photo 1 -->
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Wedding Reception" data-caption="Wedding Reception – 2023"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <!-- Wedding Photos -->
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="wedding">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering past wedding reception photo 1 -->
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Wedding Reception"
+              data-caption="Wedding Reception – 2023" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Wedding Reception</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Wedding Reception</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="wedding">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering past wedding table setup photo -->
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Wedding Table Setup" data-caption="Elegant Table Setup – Wedding"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="wedding">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering past wedding table setup photo -->
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Wedding Table Setup"
+              data-caption="Elegant Table Setup – Wedding" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Wedding Setup</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Wedding Setup</p>
-      </div>
 
-      <!-- Corporate Photos -->
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="corporate">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering corporate event photo 1 -->
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="Corporate Event" data-caption="Corporate Event – Seminar Catering"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <!-- Corporate Photos -->
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="corporate">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering corporate event photo 1 -->
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="Corporate Event"
+              data-caption="Corporate Event – Seminar Catering" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Corporate Seminar</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Corporate Seminar</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="corporate">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering corporate event photo 2 -->
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Corporate Lunch" data-caption="Company Anniversary Dinner"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="corporate">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering corporate event photo 2 -->
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Corporate Lunch"
+              data-caption="Company Anniversary Dinner" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Company Anniversary</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Company Anniversary</p>
-      </div>
 
-      <!-- Birthday Photos -->
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="birthday">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering birthday party photo 1 -->
-          <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=80" alt="Birthday Party" data-caption="Birthday Celebration"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <!-- Birthday Photos -->
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="birthday">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering birthday party photo 1 -->
+            <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=80" alt="Birthday Party"
+              data-caption="Birthday Celebration" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Birthday Celebration</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Birthday Celebration</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="birthday">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering debut or birthday photo 2 -->
-          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Debut Party" data-caption="Debut Celebration"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="birthday">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering debut or birthday photo 2 -->
+            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Debut Party"
+              data-caption="Debut Celebration" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Debut Party</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Debut Party</p>
-      </div>
 
-      <!-- School Events -->
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="school">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering graduation event photo -->
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" alt="Graduation" data-caption="Graduation Ceremony Catering"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <!-- School Events -->
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="school">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering graduation event photo -->
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" alt="Graduation"
+              data-caption="Graduation Ceremony Catering" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Graduation Reception</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Graduation Reception</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="school">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering school fair or recognition event photo -->
-          <img src="https://images.unsplash.com/photo-1577896851905-b87a5b6d0f83?w=600&q=80" alt="School Event" data-caption="School Recognition Event"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="school">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering school fair or recognition event photo -->
+            <img src="https://images.unsplash.com/photo-1577896851905-b87a5b6d0f83?w=600&q=80" alt="School Event"
+              data-caption="School Recognition Event" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">School Recognition</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">School Recognition</p>
-      </div>
 
-      <!-- Food & Setup Photos -->
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering buffet spread photo -->
-          <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Buffet Setup" data-caption="Buffet Spread Setup"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <!-- Food & Setup Photos -->
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering buffet spread photo -->
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Buffet Setup"
+              data-caption="Buffet Spread Setup" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Buffet Setup</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Buffet Setup</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering food plating or dessert photo -->
-          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Food Plating" data-caption="Signature Dishes Display"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering food plating or dessert photo -->
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Food Plating"
+              data-caption="Signature Dishes Display" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Food Presentation</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Food Presentation</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering venue decoration or table arrangement -->
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Venue Setup" data-caption="Venue Decoration & Setup"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering venue decoration or table arrangement -->
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Venue Setup"
+              data-caption="Venue Decoration & Setup" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Venue Decoration</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Venue Decoration</p>
-      </div>
 
-      <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
-        <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
-          <!-- REPLACE: Medy's Catering dessert or cake table photo -->
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Dessert Table" data-caption="Dessert Station"/>
-          <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+        <div class="col-6 col-md-4 col-lg-3 mc-gallery-item" data-category="food">
+          <div class="mc-gallery-full-thumb" onclick="openLightbox(this)">
+            <!-- REPLACE: Medy's Catering dessert or cake table photo -->
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Dessert Table"
+              data-caption="Dessert Station" />
+            <div class="mc-gallery-full-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <p class="small text-center mt-2 mc-body-text">Dessert Station</p>
         </div>
-        <p class="small text-center mt-2 mc-body-text">Dessert Station</p>
-      </div>
 
+      </div>
+      <!-- END Gallery Grid -->
     </div>
-    <!-- END Gallery Grid -->
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="mc-lightbox" id="lightbox">
+    <button class="mc-lightbox-close" onclick="closeLightbox()"><i class="bi bi-x-lg"></i></button>
+    <img id="lightboxImg" src="" alt="" />
+    <p class="mc-lightbox-caption" id="lightboxCaption"></p>
   </div>
-</section>
 
-<!-- LIGHTBOX -->
-<div class="mc-lightbox" id="lightbox">
-  <button class="mc-lightbox-close" onclick="closeLightbox()"><i class="bi bi-x-lg"></i></button>
-  <img id="lightboxImg" src="" alt=""/>
-  <p class="mc-lightbox-caption" id="lightboxCaption"></p>
-</div>
+  <!-- CTA -->
+  <section class="py-4 mc-section-red text-white text-center">
+    <div class="container">
+      <h4 class="mc-section-title text-white mb-3">Want Your Event to Look Like <span
+          style="color:var(--mc-gold)">This?</span></h4>
+      <a href="booking.html" class="btn mc-btn-outline btn-lg px-5">Book Your Event Now</a>
+    </div>
+  </section>
 
-<!-- CTA -->
-<section class="py-4 mc-section-red text-white text-center">
-  <div class="container">
-    <h4 class="mc-section-title text-white mb-3">Want Your Event to Look Like <span style="color:var(--mc-gold)">This?</span></h4>
-    <a href="booking.html" class="btn mc-btn-outline btn-lg px-5">Book Your Event Now</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="mc-footer pt-5 pb-3">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="mc-brand-text fs-4 mb-2"><i class="bi bi-award-fill mc-accent me-2"></i>Medy's<strong> Catering</strong></div>
-        <p class="text-white-50">Your trusted partner for catering and event management services.</p>
-        <div class="d-flex gap-3 mt-3">
-          <a href="#" class="mc-social-icon"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="mc-social-icon"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="mc-social-icon"><i class="bi bi-messenger"></i></a>
+  <!-- FOOTER -->
+  <footer class="mc-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="mc-brand-text fs-4 mb-2"><i class="bi bi-award-fill mc-accent me-2"></i>Medy's<strong>
+              Catering</strong></div>
+          <p class="text-white-50">Your trusted partner for catering and event management services.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="mc-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="mc-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="mc-social-icon"><i class="bi bi-messenger"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="mc-footer-heading">Quick Links</h6>
+          <ul class="mc-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="mc-footer-heading">Services</h6>
+          <ul class="mc-footer-links">
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Weddings</a></li>
+            <li><a href="services.html">Birthdays</a></li>
+            <li><a href="services.html">School Events</a></li>
+            <li><a href="services.html">Buffet Catering</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="mc-footer-heading">Contact Us</h6>
+          <ul class="mc-footer-links">
+            <li><i class="bi bi-geo-alt-fill mc-accent me-2"></i>Trapiche 2, Tanauan City, Batangas, Philippines, 4232
+            </li>
+            <li><i class="bi bi-telephone-fill mc-accent me-2"></i>0999 864 8368</li>
+            <li><i class="bi bi-envelope-fill mc-accent me-2"></i>mdavesulabo@yahoo.com</li>
+            <li><i class="bi bi-clock-fill mc-accent me-2"></i>Mon–Sat: 8:00 AM – 6:00 PM</li>
+          </ul>
         </div>
       </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="mc-footer-heading">Quick Links</h6>
-        <ul class="mc-footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="mc-footer-heading">Services</h6>
-        <ul class="mc-footer-links">
-          <li><a href="services.html">Corporate Events</a></li>
-          <li><a href="services.html">Weddings</a></li>
-          <li><a href="services.html">Birthdays</a></li>
-          <li><a href="services.html">School Events</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h6 class="mc-footer-heading">Contact</h6>
-        <ul class="mc-footer-links">
-          <li><i class="bi bi-geo-alt-fill mc-accent me-2"></i>[Business Address Here]</li>
-          <li><i class="bi bi-telephone-fill mc-accent me-2"></i>[Phone Number Here]</li>
-          <li><i class="bi bi-envelope-fill mc-accent me-2"></i>[Email Here]</li>
-        </ul>
-      </div>
+      <hr class="mc-footer-hr mt-4" />
+      <p class="text-center text-white-50 small mb-0">&copy; 2025 Medy's Catering. All rights reserved. | Developed for
+        Academic Research &ndash; PUP</p>
     </div>
-    <hr class="mc-footer-hr mt-4"/>
-    <p class="text-center text-white-50 small mb-0">&copy; 2025 Medy's Catering. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="assets/script.js"></script>
-<script>
-  // Lightbox functionality
-  function openLightbox(thumbEl) {
-    const img = thumbEl.querySelector('img');
-    document.getElementById('lightboxImg').src = img.src;
-    document.getElementById('lightboxImg').alt = img.alt;
-    document.getElementById('lightboxCaption').textContent = img.getAttribute('data-caption') || img.alt;
-    document.getElementById('lightbox').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/script.js"></script>
+  <script>
+    // Lightbox functionality
+    function openLightbox(thumbEl) {
+      const img = thumbEl.querySelector('img');
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      document.getElementById('lightboxCaption').textContent = img.getAttribute('data-caption') || img.alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-  }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-  // Close lightbox on backdrop click
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
+    // Close lightbox on backdrop click
+    document.getElementById('lightbox').addEventListener('click', function (e) {
+      if (e.target === this) closeLightbox();
+    });
 
-  // Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
+
 </html>

@@ -1,332 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services – Medy's Catering</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top mc-navbar">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <span class="mc-logo-icon"><i class="bi bi-award-fill"></i></span>
-      <span class="mc-brand-text">Medy's<strong> Catering</strong></span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-3"><a class="btn mc-btn-outline" href="booking.html">Book Now</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- PAGE HERO -->
-<section class="mc-page-hero">
-  <div class="container">
-    <nav aria-label="breadcrumb" class="mc-breadcrumb mb-3">
-      <a href="index.html">Home</a> / <span>Services</span>
-    </nav>
-    <h1 class="animate-fade-up">Our <span style="color:var(--mc-gold)">Services</span></h1>
-    <p class="animate-fade-up delay-1 mt-2">Comprehensive catering and event management solutions for every occasion</p>
-  </div>
-</section>
-
-<!-- SERVICES DETAIL -->
-<section class="py-5 mc-section">
-  <div class="container">
-    <!-- Corporate Events -->
-    <div class="row align-items-center g-5 mb-5 pb-4 border-bottom">
-      <div class="col-lg-5">
-        <!-- REPLACE: photo of a Medy's Catering corporate/company event -->
-        <div class="mc-img-frame">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80"
-               alt="Corporate event" class="img-fluid rounded-3 shadow"/>
-          <!-- ^^^ REPLACE with actual Medy's Catering corporate event photo ^^^ -->
-        </div>
-      </div>
-      <div class="col-lg-7">
-        <div class="mc-service-icon mb-3"><i class="bi bi-building"></i></div>
-        <h3 class="mc-section-title">Corporate <span class="mc-accent">Events</span></h3>
-        <p class="mc-body-text">We provide full catering and event management support for corporate gatherings — seminars, team building activities, company anniversaries, product launches, and more. Our professional team ensures smooth logistics, punctual service, and a presentation that reflects your company's standards.</p>
-        <ul class="mc-body-text ps-3">
-          <li>Conference & seminar catering</li>
-          <li>Product launch events</li>
-          <li>Team building activities</li>
-          <li>Company anniversary parties</li>
-          <li>Business luncheons and dinners</li>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top mc-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="mc-logo-icon"><i class="bi bi-award-fill"></i></span>
+        <span class="mc-brand-text">Medy's<strong> Catering</strong></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn mc-btn-outline" href="booking.html">Book Now</a></li>
         </ul>
-        <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
       </div>
     </div>
+  </nav>
 
-    <!-- Weddings -->
-    <div class="row align-items-center g-5 mb-5 pb-4 border-bottom flex-lg-row-reverse">
-      <div class="col-lg-5">
-        <!-- REPLACE: photo of a Medy's Catering wedding/reception event -->
-        <div class="mc-img-frame">
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=80"
-               alt="Wedding reception" class="img-fluid rounded-3 shadow"/>
-          <!-- ^^^ REPLACE with actual Medy's Catering wedding event photo ^^^ -->
-        </div>
-      </div>
-      <div class="col-lg-7">
-        <div class="mc-service-icon mb-3"><i class="bi bi-heart"></i></div>
-        <h3 class="mc-section-title">Weddings & <span class="mc-accent">Receptions</span></h3>
-        <p class="mc-body-text">Your wedding day deserves nothing less than perfection. Medy's Catering handles the food, venue setup, and coordination so you can focus on celebrating your love. From the appetizers to the wedding cake — we make it magical.</p>
-        <ul class="mc-body-text ps-3">
-          <li>Elegant buffet and plated meal setups</li>
-          <li>Custom wedding menu planning</li>
-          <li>Venue decoration and table arrangements</li>
-          <li>Wedding reception coordination</li>
-          <li>Dessert stations and wedding cakes</li>
-        </ul>
-        <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
-      </div>
+  <!-- PAGE HERO -->
+  <section class="mc-page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mc-breadcrumb mb-3">
+        <a href="index.html">Home</a> / <span>Services</span>
+      </nav>
+      <h1 class="animate-fade-up">Our <span style="color:var(--mc-gold)">Services</span></h1>
+      <p class="animate-fade-up delay-1 mt-2">Comprehensive catering and event management solutions for every occasion
+      </p>
     </div>
+  </section>
 
-    <!-- Birthdays -->
-    <div class="row align-items-center g-5 mb-5 pb-4 border-bottom">
-      <div class="col-lg-5">
-        <!-- REPLACE: photo of a Medy's Catering birthday event -->
-        <div class="mc-img-frame">
-          <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=700&q=80"
-               alt="Birthday celebration" class="img-fluid rounded-3 shadow"/>
-          <!-- ^^^ REPLACE with actual Medy's Catering birthday event photo ^^^ -->
+  <!-- SERVICES DETAIL -->
+  <section class="py-5 mc-section">
+    <div class="container">
+      <!-- Corporate Events -->
+      <div class="row align-items-center g-5 mb-5 pb-4 border-bottom">
+        <div class="col-lg-5">
+          <!-- REPLACE: photo of a Medy's Catering corporate/company event -->
+          <div class="mc-img-frame">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Corporate event"
+              class="img-fluid rounded-3 shadow" />
+            <!-- ^^^ REPLACE with actual Medy's Catering corporate event photo ^^^ -->
+          </div>
         </div>
-      </div>
-      <div class="col-lg-7">
-        <div class="mc-service-icon mb-3"><i class="bi bi-balloon-heart"></i></div>
-        <h3 class="mc-section-title">Birthdays & <span class="mc-accent">Socials</span></h3>
-        <p class="mc-body-text">Celebrate life's milestones with Medy's Catering. Whether it's a debut, a sweet sixteen, or a golden anniversary, we bring color, flavor, and joy to every celebration.</p>
-        <ul class="mc-body-text ps-3">
-          <li>Birthday party packages</li>
-          <li>Debut and milestone celebrations</li>
-          <li>Family reunions and gatherings</li>
-          <li>Themed party setups</li>
-          <li>Customized menus for all ages</li>
-        </ul>
-        <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
-      </div>
-    </div>
-
-    <!-- School Events -->
-    <div class="row align-items-center g-5 mb-5 pb-4 border-bottom flex-lg-row-reverse">
-      <div class="col-lg-5">
-        <!-- REPLACE: photo of a Medy's Catering school or graduation event -->
-        <div class="mc-img-frame">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80"
-               alt="School event" class="img-fluid rounded-3 shadow"/>
-          <!-- ^^^ REPLACE with actual Medy's Catering school event photo ^^^ -->
-        </div>
-      </div>
-      <div class="col-lg-7">
-        <div class="mc-service-icon mb-3"><i class="bi bi-mortarboard"></i></div>
-        <h3 class="mc-section-title">School <span class="mc-accent">Activities</span></h3>
-        <p class="mc-body-text">From graduation ceremonies to school fairs, Medy's Catering provides dependable, budget-friendly catering solutions for educational institutions. We understand the importance of timely and organized service for school events.</p>
-        <ul class="mc-body-text ps-3">
-          <li>Graduation ceremonies and receptions</li>
-          <li>School fairs and bazaars</li>
-          <li>Faculty and staff gatherings</li>
-          <li>Sports day refreshments</li>
-          <li>Recognition and awards events</li>
-        </ul>
-        <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SAMPLE MENU -->
-<section class="py-5 mc-section-alt">
-  <div class="container">
-    <div class="text-center mb-5">
-      <p class="mc-section-pre">Our Cuisine</p>
-      <h2 class="mc-section-title">Sample <span class="mc-accent">Menu</span></h2>
-      <p class="mc-body-text mx-auto" style="max-width:500px;">A taste of what we offer. Custom menus are available upon request.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="mc-services-detail">
-          <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Main Course</h5>
-          <div class="mc-menu-item"><span>Lechon Baboy</span><span class="badge bg-danger">Popular</span></div>
-          <div class="mc-menu-item"><span>Roasted Chicken with Gravy</span></div>
-          <div class="mc-menu-item"><span>Beef Caldereta</span></div>
-          <div class="mc-menu-item"><span>Grilled Liempo</span></div>
-          <div class="mc-menu-item"><span>Kare-Kare with Bagoong</span></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mc-services-detail">
-          <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Rice & Pasta</h5>
-          <div class="mc-menu-item"><span>Pancit Canton</span><span class="badge bg-danger">Popular</span></div>
-          <div class="mc-menu-item"><span>Pancit Bihon</span></div>
-          <div class="mc-menu-item"><span>Java Rice</span></div>
-          <div class="mc-menu-item"><span>Baked Macaroni</span></div>
-          <div class="mc-menu-item"><span>Steamed White Rice</span></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mc-services-detail">
-          <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Vegetables & Soups</h5>
-          <div class="mc-menu-item"><span>Pinakbet</span></div>
-          <div class="mc-menu-item"><span>Chopsuey</span></div>
-          <div class="mc-menu-item"><span>Sinigang na Baboy</span><span class="badge bg-danger">Popular</span></div>
-          <div class="mc-menu-item"><span>Bulalo</span></div>
-          <div class="mc-menu-item"><span>Tinolang Manok</span></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mc-services-detail">
-          <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Desserts & Drinks</h5>
-          <div class="mc-menu-item"><span>Leche Flan</span><span class="badge bg-danger">Popular</span></div>
-          <div class="mc-menu-item"><span>Buco Pandan Salad</span></div>
-          <div class="mc-menu-item"><span>Fruit Salad</span></div>
-          <div class="mc-menu-item"><span>Iced Tea & Juice Station</span></div>
-          <div class="mc-menu-item"><span>Coffee & Tea Station</span></div>
-        </div>
-      </div>
-    </div>
-    <p class="text-center mt-4 mc-body-text"><i class="bi bi-info-circle mc-accent me-1"></i> Menu items may vary depending on the package selected. Contact us for custom menu planning.</p>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section class="py-5 mc-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <p class="mc-section-pre">Pricing</p>
-      <h2 class="mc-section-title">Service <span class="mc-accent">Packages</span></h2>
-      <p class="mc-body-text mx-auto" style="max-width:500px;">Choose the package that fits your event. All packages can be customized to suit your needs.</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="mc-service-card h-100 text-center">
-          <h5 class="mc-service-title">Basic</h5>
-          <!-- REPLACE: Update pricing with actual Medy's Catering package rates -->
-          <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
-          <p class="mc-body-text small">Per head / Starting at</p>
-          <hr/>
-          <ul class="text-start mc-body-text small">
-            <li>5 Main Dishes</li>
-            <li>1 Dessert</li>
-            <li>Iced Tea</li>
-            <li>Table Setup & Utensils</li>
+        <div class="col-lg-7">
+          <div class="mc-service-icon mb-3"><i class="bi bi-building"></i></div>
+          <h3 class="mc-section-title">Corporate <span class="mc-accent">Events</span></h3>
+          <p class="mc-body-text">We provide full catering and event management support for corporate gatherings —
+            seminars, team building activities, company anniversaries, product launches, and more. Our professional team
+            ensures smooth logistics, punctual service, and a presentation that reflects your company's standards.</p>
+          <ul class="mc-body-text ps-3">
+            <li>Conference & seminar catering</li>
+            <li>Product launch events</li>
+            <li>Team building activities</li>
+            <li>Company anniversary parties</li>
+            <li>Business luncheons and dinners</li>
           </ul>
-          <a href="booking.html" class="btn mc-btn-outline-red w-100 mt-3">Book This Package</a>
+          <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="mc-service-card h-100 text-center border-danger" style="border-width:2px!important;">
-          <div class="badge bg-danger mb-2">Most Popular</div>
-          <h5 class="mc-service-title">Standard</h5>
-          <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
-          <p class="mc-body-text small">Per head / Starting at</p>
-          <hr/>
-          <ul class="text-start mc-body-text small">
-            <li>8 Main Dishes</li>
-            <li>2 Desserts</li>
-            <li>Juice & Iced Tea</li>
-            <li>Full Table Setup</li>
-            <li>Venue Coordination</li>
+
+      <!-- Weddings -->
+      <div class="row align-items-center g-5 mb-5 pb-4 border-bottom flex-lg-row-reverse">
+        <div class="col-lg-5">
+          <!-- REPLACE: photo of a Medy's Catering wedding/reception event -->
+          <div class="mc-img-frame">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=80" alt="Wedding reception"
+              class="img-fluid rounded-3 shadow" />
+            <!-- ^^^ REPLACE with actual Medy's Catering wedding event photo ^^^ -->
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="mc-service-icon mb-3"><i class="bi bi-heart"></i></div>
+          <h3 class="mc-section-title">Weddings & <span class="mc-accent">Receptions</span></h3>
+          <p class="mc-body-text">Your wedding day deserves nothing less than perfection. Medy's Catering handles the
+            food, venue setup, and coordination so you can focus on celebrating your love. From the appetizers to the
+            wedding cake — we make it magical.</p>
+          <ul class="mc-body-text ps-3">
+            <li>Elegant buffet and plated meal setups</li>
+            <li>Custom wedding menu planning</li>
+            <li>Venue decoration and table arrangements</li>
+            <li>Wedding reception coordination</li>
+            <li>Dessert stations and wedding cakes</li>
           </ul>
-          <a href="booking.html" class="btn mc-btn-primary w-100 mt-3">Book This Package</a>
+          <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="mc-service-card h-100 text-center">
-          <h5 class="mc-service-title">Premium</h5>
-          <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
-          <p class="mc-body-text small">Per head / Starting at</p>
-          <hr/>
-          <ul class="text-start mc-body-text small">
-            <li>12+ Main Dishes</li>
-            <li>Dessert Station</li>
-            <li>Full Drinks Station</li>
-            <li>Full Venue Decoration</li>
-            <li>Event Coordinator</li>
-            <li>Photo-worthy Presentation</li>
+
+      <!-- Birthdays -->
+      <div class="row align-items-center g-5 mb-5 pb-4 border-bottom">
+        <div class="col-lg-5">
+          <!-- REPLACE: photo of a Medy's Catering birthday event -->
+          <div class="mc-img-frame">
+            <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=700&q=80"
+              alt="Birthday celebration" class="img-fluid rounded-3 shadow" />
+            <!-- ^^^ REPLACE with actual Medy's Catering birthday event photo ^^^ -->
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="mc-service-icon mb-3"><i class="bi bi-balloon-heart"></i></div>
+          <h3 class="mc-section-title">Birthdays & <span class="mc-accent">Socials</span></h3>
+          <p class="mc-body-text">Celebrate life's milestones with Medy's Catering. Whether it's a debut, a sweet
+            sixteen, or a golden anniversary, we bring color, flavor, and joy to every celebration.</p>
+          <ul class="mc-body-text ps-3">
+            <li>Birthday party packages</li>
+            <li>Debut and milestone celebrations</li>
+            <li>Family reunions and gatherings</li>
+            <li>Themed party setups</li>
+            <li>Customized menus for all ages</li>
           </ul>
-          <a href="booking.html" class="btn mc-btn-outline-red w-100 mt-3">Book This Package</a>
+          <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
+        </div>
+      </div>
+
+      <!-- School Events -->
+      <div class="row align-items-center g-5 mb-5 pb-4 border-bottom flex-lg-row-reverse">
+        <div class="col-lg-5">
+          <!-- REPLACE: photo of a Medy's Catering school or graduation event -->
+          <div class="mc-img-frame">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80" alt="School event"
+              class="img-fluid rounded-3 shadow" />
+            <!-- ^^^ REPLACE with actual Medy's Catering school event photo ^^^ -->
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="mc-service-icon mb-3"><i class="bi bi-mortarboard"></i></div>
+          <h3 class="mc-section-title">School <span class="mc-accent">Activities</span></h3>
+          <p class="mc-body-text">From graduation ceremonies to school fairs, Medy's Catering provides dependable,
+            budget-friendly catering solutions for educational institutions. We understand the importance of timely and
+            organized service for school events.</p>
+          <ul class="mc-body-text ps-3">
+            <li>Graduation ceremonies and receptions</li>
+            <li>School fairs and bazaars</li>
+            <li>Faculty and staff gatherings</li>
+            <li>Sports day refreshments</li>
+            <li>Recognition and awards events</li>
+          </ul>
+          <a href="booking.html" class="btn mc-btn-primary mt-2">Book This Service</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SAMPLE MENU -->
+  <section class="py-5 mc-section-alt">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="mc-section-pre">Our Cuisine</p>
+        <h2 class="mc-section-title">Sample <span class="mc-accent">Menu</span></h2>
+        <p class="mc-body-text mx-auto" style="max-width:500px;">A taste of what we offer. Custom menus are available
+          upon request.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="mc-services-detail">
+            <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Main Course</h5>
+            <div class="mc-menu-item"><span>Lechon Baboy</span><span class="badge bg-danger">Popular</span></div>
+            <div class="mc-menu-item"><span>Roasted Chicken with Gravy</span></div>
+            <div class="mc-menu-item"><span>Beef Caldereta</span></div>
+            <div class="mc-menu-item"><span>Grilled Liempo</span></div>
+            <div class="mc-menu-item"><span>Kare-Kare with Bagoong</span></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mc-services-detail">
+            <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Rice & Pasta</h5>
+            <div class="mc-menu-item"><span>Pancit Canton</span><span class="badge bg-danger">Popular</span></div>
+            <div class="mc-menu-item"><span>Pancit Bihon</span></div>
+            <div class="mc-menu-item"><span>Java Rice</span></div>
+            <div class="mc-menu-item"><span>Baked Macaroni</span></div>
+            <div class="mc-menu-item"><span>Steamed White Rice</span></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mc-services-detail">
+            <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Vegetables & Soups</h5>
+            <div class="mc-menu-item"><span>Pinakbet</span></div>
+            <div class="mc-menu-item"><span>Chopsuey</span></div>
+            <div class="mc-menu-item"><span>Sinigang na Baboy</span><span class="badge bg-danger">Popular</span></div>
+            <div class="mc-menu-item"><span>Bulalo</span></div>
+            <div class="mc-menu-item"><span>Tinolang Manok</span></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mc-services-detail">
+            <h5 class="mc-service-title mb-3"><i class="bi bi-journal-text mc-accent me-2"></i>Desserts & Drinks</h5>
+            <div class="mc-menu-item"><span>Leche Flan</span><span class="badge bg-danger">Popular</span></div>
+            <div class="mc-menu-item"><span>Buco Pandan Salad</span></div>
+            <div class="mc-menu-item"><span>Fruit Salad</span></div>
+            <div class="mc-menu-item"><span>Iced Tea & Juice Station</span></div>
+            <div class="mc-menu-item"><span>Coffee & Tea Station</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-4 mc-body-text"><i class="bi bi-info-circle mc-accent me-1"></i> Menu items may vary
+        depending on the package selected. Contact us for custom menu planning.</p>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="py-5 mc-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="mc-section-pre">Pricing</p>
+        <h2 class="mc-section-title">Service <span class="mc-accent">Packages</span></h2>
+        <p class="mc-body-text mx-auto" style="max-width:500px;">Choose the package that fits your event. All packages
+          can be customized to suit your needs.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="mc-service-card h-100 text-center">
+            <h5 class="mc-service-title">Basic</h5>
+            <!-- REPLACE: Update pricing with actual Medy's Catering package rates -->
+            <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
+            <p class="mc-body-text small">Per head / Starting at</p>
+            <hr />
+            <ul class="text-start mc-body-text small">
+              <li>5 Main Dishes</li>
+              <li>1 Dessert</li>
+              <li>Iced Tea</li>
+              <li>Table Setup & Utensils</li>
+            </ul>
+            <a href="booking.html" class="btn mc-btn-outline-red w-100 mt-3">Book This Package</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mc-service-card h-100 text-center border-danger" style="border-width:2px!important;">
+            <div class="badge bg-danger mb-2">Most Popular</div>
+            <h5 class="mc-service-title">Standard</h5>
+            <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
+            <p class="mc-body-text small">Per head / Starting at</p>
+            <hr />
+            <ul class="text-start mc-body-text small">
+              <li>8 Main Dishes</li>
+              <li>2 Desserts</li>
+              <li>Juice & Iced Tea</li>
+              <li>Full Table Setup</li>
+              <li>Venue Coordination</li>
+            </ul>
+            <a href="booking.html" class="btn mc-btn-primary w-100 mt-3">Book This Package</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mc-service-card h-100 text-center">
+            <h5 class="mc-service-title">Premium</h5>
+            <div class="display-6 fw-bold mc-accent my-2">₱ [Price]</div>
+            <p class="mc-body-text small">Per head / Starting at</p>
+            <hr />
+            <ul class="text-start mc-body-text small">
+              <li>12+ Main Dishes</li>
+              <li>Dessert Station</li>
+              <li>Full Drinks Station</li>
+              <li>Full Venue Decoration</li>
+              <li>Event Coordinator</li>
+              <li>Photo-worthy Presentation</li>
+            </ul>
+            <a href="booking.html" class="btn mc-btn-outline-red w-100 mt-3">Book This Package</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="py-5 mc-cta text-center">
-  <div class="container">
-    <h2 class="mc-section-title">Have a <span class="mc-accent">Custom Request?</span></h2>
-    <p class="mc-body-text mx-auto mb-4" style="max-width:500px;">Every event is unique. Contact us to discuss your specific needs and get a customized quote.</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3">
-      <a href="booking.html" class="btn mc-btn-primary btn-lg px-5">Book Now</a>
-      <a href="contact.html" class="btn mc-btn-outline-red btn-lg px-5">Get a Quote</a>
+  <!-- CTA -->
+  <section class="py-5 mc-cta text-center">
+    <div class="container">
+      <h2 class="mc-section-title">Have a <span class="mc-accent">Custom Request?</span></h2>
+      <p class="mc-body-text mx-auto mb-4" style="max-width:500px;">Every event is unique. Contact us to discuss your
+        specific needs and get a customized quote.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html" class="btn mc-btn-primary btn-lg px-5">Book Now</a>
+        <a href="contact.html" class="btn mc-btn-outline-red btn-lg px-5">Get a Quote</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="mc-footer pt-5 pb-3">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="mc-brand-text fs-4 mb-2"><i class="bi bi-award-fill mc-accent me-2"></i>Medy's<strong> Catering</strong></div>
-        <p class="text-white-50">Your trusted partner for catering and event management services.</p>
-        <div class="d-flex gap-3 mt-3">
-          <a href="#" class="mc-social-icon"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="mc-social-icon"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="mc-social-icon"><i class="bi bi-messenger"></i></a>
+  <!-- FOOTER -->
+  <footer class="mc-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="mc-brand-text fs-4 mb-2"><i class="bi bi-award-fill mc-accent me-2"></i>Medy's<strong>
+              Catering</strong></div>
+          <p class="text-white-50">Your trusted partner for catering and event management services.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="mc-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="mc-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="mc-social-icon"><i class="bi bi-messenger"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="mc-footer-heading">Quick Links</h6>
+          <ul class="mc-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="mc-footer-heading">Services</h6>
+          <ul class="mc-footer-links">
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Weddings</a></li>
+            <li><a href="services.html">Birthdays</a></li>
+            <li><a href="services.html">School Events</a></li>
+            <li><a href="services.html">Buffet Catering</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="mc-footer-heading">Contact Us</h6>
+          <ul class="mc-footer-links">
+            <li><i class="bi bi-geo-alt-fill mc-accent me-2"></i>Trapiche 2, Tanauan City, Batangas, Philippines, 4232
+            </li>
+            <li><i class="bi bi-telephone-fill mc-accent me-2"></i>0999 864 8368</li>
+            <li><i class="bi bi-envelope-fill mc-accent me-2"></i>mdavesulabo@yahoo.com</li>
+            <li><i class="bi bi-clock-fill mc-accent me-2"></i>Mon–Sat: 8:00 AM – 6:00 PM</li>
+          </ul>
         </div>
       </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="mc-footer-heading">Quick Links</h6>
-        <ul class="mc-footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6 class="mc-footer-heading">Services</h6>
-        <ul class="mc-footer-links">
-          <li><a href="services.html">Corporate Events</a></li>
-          <li><a href="services.html">Weddings</a></li>
-          <li><a href="services.html">Birthdays</a></li>
-          <li><a href="services.html">School Events</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h6 class="mc-footer-heading">Contact</h6>
-        <ul class="mc-footer-links">
-          <li><i class="bi bi-geo-alt-fill mc-accent me-2"></i>[Business Address Here]</li>
-          <li><i class="bi bi-telephone-fill mc-accent me-2"></i>[Phone Number Here]</li>
-          <li><i class="bi bi-envelope-fill mc-accent me-2"></i>[Email Here]</li>
-        </ul>
-      </div>
+      <hr class="mc-footer-hr mt-4" />
+      <p class="text-center text-white-50 small mb-0">&copy; 2025 Medy's Catering. All rights reserved. | Developed for
+        Academic Research &ndash; PUP</p>
     </div>
-    <hr class="mc-footer-hr mt-4"/>
-    <p class="text-center text-white-50 small mb-0">&copy; 2025 Medy's Catering. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/script.js"></script>
 </body>
+
 </html>

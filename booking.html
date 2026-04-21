@@ -40,7 +40,6 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
   <section class="mc-page-hero">
     <div class="container">
       <nav aria-label="breadcrumb" class="mc-breadcrumb mb-3">
@@ -64,7 +63,6 @@
             <h3 class="mc-section-title mb-1">Event <span class="mc-accent">Details</span></h3>
             <p class="mc-body-text mb-4">Please provide the information below. Fields marked with * are required.</p>
 
-            <!-- SUCCESS ALERT -->
             <div id="bookingSuccess" class="alert alert-success d-none" role="alert">
               <i class="bi bi-check-circle-fill me-2"></i>
               <strong>Booking Request Submitted!</strong> Our team will contact you within 24 hours to confirm your
@@ -549,12 +547,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/script.js"></script>
-
-  <!-- ================================================================
-       ADDITIONAL STYLES
-       ================================================================ -->
+       
   <style>
-    /* Terms box */
     .mc-terms-box {
       background: var(--mc-off-white);
       border: 1.5px solid #ecdad8;
@@ -573,7 +567,6 @@
       color: var(--mc-red-dark);
     }
 
-    /* When terms are accepted, highlight the box */
     .mc-terms-box.terms-accepted {
       border-color: #10b981;
       background: #f0fdf4;
@@ -584,7 +577,6 @@
       border-color: #10b981;
     }
 
-    /* Inline error message */
     .mc-field-error {
       color: var(--mc-red);
       font-size: 0.82rem;
@@ -592,7 +584,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Confirmation summary table */
     .mc-confirm-table {
       border: 1.5px solid #ecdad8;
       border-radius: 10px;
@@ -628,11 +619,7 @@
     }
   </style>
 
-  <!-- ================================================================
-       SCRIPTS
-       ================================================================ -->
   <script>
-    // ── Accept Terms from modal "I Agree" button ──────────────────────
     function acceptTerms() {
       document.getElementById('termsCheck').checked = true;
       document.getElementById('termsError').classList.add('d-none');
@@ -640,7 +627,6 @@
       bootstrap.Modal.getInstance(document.getElementById('termsModal')).hide();
     }
 
-    // ── Reflect checkbox state visually ──────────────────────────────
     document.addEventListener('DOMContentLoaded', function () {
       const chk = document.getElementById('termsCheck');
       const box = document.querySelector('.mc-terms-box');
@@ -654,7 +640,6 @@
       });
     });
 
-    // ── Format event type label from value ───────────────────────────
     function formatEventType(val) {
       const map = {
         corporate: 'Corporate Event',
@@ -667,7 +652,6 @@
       return map[val] || val;
     }
 
-    // ── Format package label from value ──────────────────────────────
     function formatPackage(val) {
       const map = {
         basic: 'Basic Package',
@@ -678,14 +662,12 @@
       return map[val] || val;
     }
 
-    // ── Format date to readable string ───────────────────────────────
     function formatDate(val) {
       if (!val) return '—';
       const d = new Date(val + 'T00:00:00');
       return d.toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' });
     }
 
-    // ── Format time to 12-hour ────────────────────────────────────────
     function formatTime(val) {
       if (!val) return '—';
       const [h, m] = val.split(':').map(Number);
@@ -694,7 +676,6 @@
       return `${hr}:${String(m).padStart(2, '0')} ${ampm}`;
     }
 
-    // ── Validate required fields ──────────────────────────────────────
     function validateForm() {
       const form = document.getElementById('bookingForm');
       const fields = form.querySelectorAll('[required]');

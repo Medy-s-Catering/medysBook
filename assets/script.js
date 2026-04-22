@@ -1,5 +1,4 @@
 const API = 'http://localhost:8000/api';
-// When deployed, change this to: 'https://your-server.com/api'
 
 /* ============================================================
    MEDY'S CATERING – GLOBAL SCRIPTS
@@ -37,11 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ---- INTERSECTION OBSERVER FOR CARD ANIMATIONS ----
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -52,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.mc-service-card, .mc-testimonial-card, .mc-team-card, .mc-value-item').forEach(el => {
     el.style.opacity = '0';
@@ -61,32 +55,40 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
-  // ---- BOOKING FORM SUBMISSION (Front-End Validation) ----
+  // ---- BOOKING FORM SUBMISSION ----
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
-    bookingForm.addEventListener('submit', function (e) {
+    bookingForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+      const btn = bookingForm.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
 
-      // ===== DATABASE NOTE =====
-      // TODO: Replace this section with an actual POST request to your backend endpoint.
-      // Example using Fetch API:
-      //
-      // const formData = new FormData(bookingForm);
-      // fetch('/api/bookings', {
-      //   method: 'POST',
-      //   body: JSON.stringify(Object.fromEntries(formData)),
-      //   headers: { 'Content-Type': 'application/json' }
-      // })
-      // .then(res => res.json())
-      // .then(data => { /* handle success */ })
-      // .catch(err => { /* handle error */ });
-      // =========================
+      const data = Object.fromEntries(new FormData(bookingForm).entries());
 
-      const successAlert = document.getElementById('bookingSuccess');
-      if (successAlert) {
-        successAlert.classList.remove('d-none');
-        bookingForm.reset();
-        successAlert.scrollIntoView({ behavior: 'smooth' });
+      try {
+        const res = await fetch(API + '/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          const msg = err.message || Object.values(err.errors || {}).flat().join(' ') || 'Submission failed.';
+          alert(msg);
+          return;
+        }
+
+        const successAlert = document.getElementById('bookingSuccess');
+        if (successAlert) {
+          successAlert.classList.remove('d-none');
+          bookingForm.reset();
+          successAlert.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (err) {
+        alert('Network error. Please check your connection and try again.');
+      } finally {
+        if (btn) btn.disabled = false;
       }
     });
   }
@@ -94,18 +96,37 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- CONTACT FORM SUBMISSION ----
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+      const btn = contactForm.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
 
-      // ===== DATABASE NOTE =====
-      // TODO: Replace this with a POST to your backend contact handler.
-      // =========================
+      const data = Object.fromEntries(new FormData(contactForm).entries());
 
-      const successAlert = document.getElementById('contactSuccess');
-      if (successAlert) {
-        successAlert.classList.remove('d-none');
-        contactForm.reset();
-        successAlert.scrollIntoView({ behavior: 'smooth' });
+      try {
+        const res = await fetch(API + '/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          const msg = err.message || Object.values(err.errors || {}).flat().join(' ') || 'Submission failed.';
+          alert(msg);
+          return;
+        }
+
+        const successAlert = document.getElementById('contactSuccess');
+        if (successAlert) {
+          successAlert.classList.remove('d-none');
+          contactForm.reset();
+          successAlert.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (err) {
+        alert('Network error. Please check your connection and try again.');
+      } finally {
+        if (btn) btn.disabled = false;
       }
     });
   }
@@ -113,10 +134,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- FEEDBACK FORM SUBMISSION ----
   const feedbackForm = document.getElementById('feedbackForm');
   if (feedbackForm) {
-    feedbackForm.addEventListener('submit', function (e) {
+    feedbackForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Validate star rating
       const starSelected = feedbackForm.querySelector('input[name="star_rating"]:checked');
       if (!starSelected) {
         const starLabel = document.getElementById('starLabel');
@@ -127,42 +147,49 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // ===== DATABASE NOTE =====
-      // TODO: POST feedback data to your backend endpoint.
-      // Recommended fields: client_name, email, event_type, has_booked,
-      // star_rating, comments, liked_tags, status='unread', created_at
-      // These match the staff portal's feedback module fields exactly.
-      //
-      // const formData = new FormData(feedbackForm);
-      // fetch('/api/feedback', {
-      //   method: 'POST',
-      //   body: JSON.stringify(Object.fromEntries(formData)),
-      //   headers: { 'Content-Type': 'application/json' }
-      // })
-      // .then(res => res.json())
-      // .then(data => { /* handle success */ })
-      // .catch(err => { /* handle error */ });
-      // =========================
+      const btn = feedbackForm.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
 
-      const successAlert = document.getElementById('feedbackSuccess');
-      if (successAlert) {
-        successAlert.classList.remove('d-none');
-        feedbackForm.reset();
-        // reset tag buttons visually
-        document.querySelectorAll('.mc-tag-btn').forEach(btn => {
-          btn.style.background = 'transparent';
-          btn.style.color = 'var(--mc-red)';
+      const data = Object.fromEntries(new FormData(feedbackForm).entries());
+      data.date_submitted = new Date().toISOString().split('T')[0];
+
+      try {
+        const res = await fetch(API + '/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data),
         });
-        const tagInput = document.getElementById('likedTagsValue');
-        if (tagInput) tagInput.value = '';
-        const starLabel = document.getElementById('starLabel');
-        if (starLabel) { starLabel.textContent = 'Click a star to rate'; starLabel.style.color = ''; }
-        successAlert.scrollIntoView({ behavior: 'smooth' });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          const msg = err.message || Object.values(err.errors || {}).flat().join(' ') || 'Submission failed.';
+          alert(msg);
+          return;
+        }
+
+        const successAlert = document.getElementById('feedbackSuccess');
+        if (successAlert) {
+          successAlert.classList.remove('d-none');
+          feedbackForm.reset();
+          document.querySelectorAll('.mc-tag-btn').forEach(b => {
+            b.style.background = 'transparent';
+            b.style.color = 'var(--mc-red)';
+          });
+          const tagInput = document.getElementById('likedTagsValue');
+          if (tagInput) tagInput.value = '';
+          const starLabel = document.getElementById('starLabel');
+          if (starLabel) { starLabel.textContent = 'Click a star to rate'; starLabel.style.color = ''; }
+          successAlert.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (err) {
+        alert('Network error. Please check your connection and try again.');
+      } finally {
+        if (btn) btn.disabled = false;
       }
     });
   }
 
-  // ---- GALLERY FILTER (Gallery Page) ----
+  // ---- GALLERY FILTER ----
   const filterBtns = document.querySelectorAll('.mc-filter-btn');
   const galleryItems = document.querySelectorAll('.mc-gallery-item');
 
@@ -176,11 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const filter = btn.dataset.filter;
         galleryItems.forEach(item => {
-          if (filter == 'all' || item.dataset.category == filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
         });
       });
     });

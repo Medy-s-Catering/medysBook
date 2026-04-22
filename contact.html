@@ -108,63 +108,6 @@
             </div>
           </div>
         </div>
-
-        <!-- CONTACT FORM -->
-        <div class="col-lg-7">
-          <div class="mc-booking-form-card">
-            <p class="mc-section-pre">Send a Message</p>
-            <h3 class="mc-section-title mb-4">How Can We <span class="mc-accent">Help?</span></h3>
-
-            <!-- SUCCESS ALERT -->
-            <div id="contactSuccess" class="alert alert-success d-none" role="alert">
-              <i class="bi bi-check-circle-fill me-2"></i>
-              <strong>Message sent!</strong> We'll get back to you within 24 hours. Thank you!
-            </div>
-
-            <form id="contactForm" novalidate>
-              <!-- ===== DATABASE NOTE =====
-                 This form is currently front-end only.
-                 Connect to your backend PHP/Node/Laravel endpoint to store messages.
-                 See assets/script.js for the fetch() implementation stub.
-                 ========================= -->
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="mc-form-label">Full Name *</label>
-                  <input type="text" class="mc-form-control form-control" placeholder="Your full name" required />
-                </div>
-                <div class="col-md-6">
-                  <label class="mc-form-label">Email Address *</label>
-                  <input type="email" class="mc-form-control form-control" placeholder="your@email.com" required />
-                </div>
-                <div class="col-md-6">
-                  <label class="mc-form-label">Phone Number</label>
-                  <input type="tel" class="mc-form-control form-control" placeholder="09XX XXX XXXX" />
-                </div>
-                <div class="col-md-6">
-                  <label class="mc-form-label">Subject</label>
-                  <select class="mc-form-control form-select">
-                    <option value="">Select a topic...</option>
-                    <option>Event Inquiry</option>
-                    <option>Pricing / Packages</option>
-                    <option>Menu Planning</option>
-                    <option>Booking Assistance</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label class="mc-form-label">Message *</label>
-                  <textarea class="mc-form-control form-control" rows="5"
-                    placeholder="Tell us about your event or inquiry..." required></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn mc-btn-primary btn-lg w-100">
-                    <i class="bi bi-send-fill me-2"></i>Send Message
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
     </div>
   </section>

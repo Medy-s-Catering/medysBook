@@ -1,3 +1,6 @@
+const API = 'http://localhost:8000/api';
+// When deployed, change this to: 'https://your-server.com/api'
+
 /* ============================================================
    MEDY'S CATERING – GLOBAL SCRIPTS
    ============================================================ */

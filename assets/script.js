@@ -1,9 +1,5 @@
 const API = 'http://localhost:8000/api';
 
-/* ============================================================
-   MEDY'S CATERING – GLOBAL SCRIPTS
-   ============================================================ */
-
 document.addEventListener('DOMContentLoaded', function () {
 
   // ---- SCROLL TO TOP BUTTON ----
@@ -21,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ---- NAVBAR SHRINK ON SCROLL ----
   const navbar = document.querySelector('.mc-navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -35,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---- INTERSECTION OBSERVER FOR CARD ANIMATIONS ----
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -203,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const filter = btn.dataset.filter;
         galleryItems.forEach(item => {
-          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
+          item.style.display = (filter == 'all' || item.dataset.category == filter) ? '' : 'none';
         });
       });
     });

@@ -67,6 +67,9 @@
               <i class="bi bi-check-circle-fill me-2"></i>
               <strong>Booking Request Submitted!</strong> Our team will contact you within 24 hours to confirm your
               booking. Thank you!
+              <div id="bookingClientIdBox" class="mt-2 d-none" style="background:rgba(255,255,255,0.6);border-radius:8px;padding:0.5rem 0.75rem;font-size:0.9rem;">
+                Your Client ID: <strong id="bookingClientIdValue" style="letter-spacing:0.05em;"></strong> — please save this for your reference.
+              </div>
             </div>
 
             <form id="bookingForm" novalidate>
@@ -106,22 +109,22 @@
                   <label class="mc-form-label">Type of Event *</label>
                   <select name="event_type" class="mc-form-control form-select" required>
                     <option value="">Select event type...</option>
-                    <option value="corporate">Corporate Event</option>
-                    <option value="wedding">Wedding / Reception</option>
-                    <option value="birthday">Birthday / Debut</option>
-                    <option value="school">School Activity</option>
-                    <option value="reunion">Family Reunion</option>
-                    <option value="other">Other</option>
+                    <option value="Corporate Event">Corporate Event</option>
+                    <option value="Wedding / Reception">Wedding / Reception</option>
+                    <option value="Birthday / Debut">Birthday / Debut</option>
+                    <option value="School Activity">School Activity</option>
+                    <option value="Family Reunion">Family Reunion</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 <div class="col-md-6">
                   <label class="mc-form-label">Package *</label>
                   <select name="package" class="mc-form-control form-select" required>
                     <option value="">Select package...</option>
-                    <option value="basic">Basic Package</option>
-                    <option value="standard">Standard Package</option>
-                    <option value="premium">Premium Package</option>
-                    <option value="custom">Custom Package (discuss with team)</option>
+                    <option value="Basic">Basic Package</option>
+                    <option value="Standard">Standard Package</option>
+                    <option value="Premium">Premium Package</option>
+                    <option value="Custom">Custom Package (discuss with team)</option>
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -632,25 +635,17 @@
     });
 
     function formatEventType(val) {
-      const map = {
-        corporate: 'Corporate Event',
-        wedding: 'Wedding / Reception',
-        birthday: 'Birthday / Debut',
-        school: 'School Activity',
-        reunion: 'Family Reunion',
-        other: 'Other'
-      };
-      return map[val] || val;
+      return val || '—';
     }
 
     function formatPackage(val) {
-      const map = {
-        basic: 'Basic Package',
-        standard: 'Standard Package',
-        premium: 'Premium Package',
-        custom: 'Custom Package (discuss with team)'
+      const labels = {
+        'Basic': 'Basic Package',
+        'Standard': 'Standard Package',
+        'Premium': 'Premium Package',
+        'Custom': 'Custom Package (discuss with team)',
       };
-      return map[val] || val;
+      return labels[val] || val || '—';
     }
 
     function formatDate(val) {

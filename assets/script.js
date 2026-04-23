@@ -73,10 +73,22 @@ document.addEventListener('DOMContentLoaded', function () {
           return;
         }
 
+        const result = await res.json().catch(() => ({}));
+
         const successAlert = document.getElementById('bookingSuccess');
         if (successAlert) {
           successAlert.classList.remove('d-none');
           bookingForm.reset();
+
+          if (result.client_id) {
+            const box = document.getElementById('bookingClientIdBox');
+            const val = document.getElementById('bookingClientIdValue');
+            if (box && val) {
+              val.textContent = result.client_id;
+              box.classList.remove('d-none');
+            }
+          }
+
           successAlert.scrollIntoView({ behavior: 'smooth' });
         }
       } catch (err) {

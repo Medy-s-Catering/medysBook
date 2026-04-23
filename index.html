@@ -304,7 +304,8 @@
           <div class="mc-avg-display mb-3 d-inline-block">
             <span id="avgRatingNum"
               style="font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:var(--mc-dark); line-height:1">4.8</span>
-            <span id="avgRatingStars" class="d-block" style="color:var(--mc-gold); font-size:1.4rem; margin-top:0.25rem">
+            <span id="avgRatingStars" class="d-block"
+              style="color:var(--mc-gold); font-size:1.4rem; margin-top:0.25rem">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
             </span>
@@ -397,11 +398,11 @@
       }
 
       function renderStars(n) {
-        const full  = Math.floor(n);
-        const half  = (n - full) >= 0.5 ? 1 : 0;
+        const full = Math.floor(n);
+        const half = (n - full) >= 0.5 ? 1 : 0;
         const empty = 5 - full - half;
         return '<i class="bi bi-star-fill"></i>'.repeat(full)
-          + (half  ? '<i class="bi bi-star-half"></i>' : '')
+          + (half ? '<i class="bi bi-star-half"></i>' : '')
           + '<i class="bi bi-star"></i>'.repeat(empty);
       }
 
@@ -429,8 +430,8 @@
         }
 
         if (data.avg_rating) {
-          document.getElementById('avgRatingNum').textContent   = data.avg_rating;
-          document.getElementById('avgRatingStars').innerHTML   = renderStars(data.avg_rating);
+          document.getElementById('avgRatingNum').textContent = data.avg_rating;
+          document.getElementById('avgRatingStars').innerHTML = renderStars(data.avg_rating);
           document.getElementById('avgRatingCount').textContent =
             `Average rating from ${data.total_count} client${data.total_count !== 1 ? 's' : ''}`;
         }
